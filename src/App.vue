@@ -1,30 +1,41 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <my-header></my-header>
+  <router-view to="/"/>
 </template>
 
+<script>
+import MyHeader from '@/components/MyHeader.vue'
+export default {
+components: {
+  MyHeader
+}
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@font-face {
+    font-family: "Montserrat";
+    src: url("@/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 
-nav {
-  padding: 30px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: "Montserrat";
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+
+h1 {
+  font-size: 64px;
+  line-height: 78px;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+h2 {
+  font-size: 36px;
+  line-height: 44px;
 }
+
+
+
 </style>

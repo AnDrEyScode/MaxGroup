@@ -1,18 +1,41 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main-block/>
+    <serve-galery-block/>
+    <preferences-block/>
+    <projects-block/>
+    <about-company-block/>
+    <contacts-block/>
+    <my-footer/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import MainBlock from '@/components/MainBlock.vue'
+import ServeGaleryBlock from '@/components/ServeGaleryBlock.vue'
+import PreferencesBlock from '@/components/PreferencesBlock.vue'
+import AboutCompanyBlock from '@/components/AboutCompanyBlock.vue'
+import MyFooter from '@/components/MyFooter.vue'
+import ContactsBlock from '@/components/ContactsBlock.vue'
+import ProjectsBlock from '@/components/ProjectsBlock.vue'
 
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
+  components:{
+    MainBlock,
+    ServeGaleryBlock,
+    PreferencesBlock,
+    AboutCompanyBlock,
+    MyFooter,
+    ContactsBlock,
+    ProjectsBlock,
   }
 }
 </script>
+
+<style ,
+    ContactsBlockscoped>
+
+</style>

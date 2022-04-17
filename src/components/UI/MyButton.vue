@@ -1,0 +1,53 @@
+<template>
+  <input class="button" type="button" :value="value"/>
+</template>
+
+<script>
+export default {
+  name: 'my-button',
+  props: {
+    value: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .button{
+    padding: 20px 50px;
+  }
+
+  .button:hover{
+    cursor: pointer;
+  }
+
+  .blue{
+    border: 2px solid #2C2450;
+    background: #2C2450;
+    color: #fff;
+  }
+
+  .blue:hover{
+    border: 2px solid #2C2450;
+    background: #fff;
+    color: #2C2450;
+  }
+
+  .button:disabled{
+    background: #9591A7;
+  }
+
+  .white{
+    border: 2px solid #fff;
+    background: #fff;
+    color: #2C2450;
+  }
+
+  .white:hover{
+    border: 2px solid #fff;
+    background: #2C2450;
+    color: #fff;
+  }
+</style>
