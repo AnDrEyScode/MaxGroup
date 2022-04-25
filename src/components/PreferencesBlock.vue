@@ -2,25 +2,31 @@
   <div class="preferences">
     <div class="preferences-container">
 
-      <div class="preference-item">
-        <input type="image" :src="require('@/assets/icons/prefer1.png')" alt="prefer1">
-        <p>30 выполненных проектов</p>
+      <div class="preference-pair">
+        <div class="preference-item">
+          <input type="image" :src="require('@/assets/icons/prefer1.png')" alt="prefer1">
+          <p>30 выполненных проектов</p>
+        </div>
+
+        <div class="preference-item">
+          <input type="image" :src="require('@/assets/icons/prefer2.png')" alt="prefer2">
+          <p>высококвалифицированные рабочие</p>
+        </div>
       </div>
 
-      <div class="preference-item">
-        <input type="image" :src="require('@/assets/icons/prefer2.png')" alt="prefer2">
-        <p>высококвалифицированные рабочие</p>
+      <div class="preference-pair">
+        <div class="preference-item">
+          <input type="image" :src="require('@/assets/icons/prefer3.png')" alt="prefer3">
+          <p>современное оборудование</p>
+        </div>
+
+        <div class="preference-item">
+          <input type="image" :src="require('@/assets/icons/prefer4.png')" alt="prefer4">
+          <p>индивидуальный подход</p>
+        </div>
       </div>
 
-      <div class="preference-item">
-        <input type="image" :src="require('@/assets/icons/prefer3.png')" alt="prefer3">
-        <p>современное оборудование</p>
-      </div>
-
-      <div class="preference-item">
-        <input type="image" :src="require('@/assets/icons/prefer4.png')" alt="prefer4">
-        <p>индивидуальный подход</p>
-      </div>
+      
       
     </div>
   </div>
@@ -51,6 +57,11 @@ export default {
     flex-wrap: wrap;
   }
 
+  .preference-pair{
+    display: flex;
+  }
+
+
   .preference-item{
     margin: 0px 20px;
     display: flex;
@@ -71,5 +82,24 @@ export default {
   .preference-item > input{
     width: 90px;
     height: auto;
+  }
+
+  @media screen and (max-width: 480px) {
+    .preference-item{
+      width: 170px;
+      margin: 0;
+    }
+
+    .preference-item > input{
+      width: 50px;
+      height: auto;
+    }
+
+    .preference-item > p{
+      font-weight: 600;
+      font-size: 8px;
+      line-height: 10px;
+      width: 150px;
+    }
   }
 </style>

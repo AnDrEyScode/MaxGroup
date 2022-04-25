@@ -38,11 +38,59 @@ export default {
     color: #fff;
   }
 
+  .main-content > h1{
+    text-align: center;
+    font-style: normal;
+  }
+
   .main-content > p{
     width: 700px;
+    font-style: normal;
     text-align: center;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .main-content{
+      width: 70%;
+    }
+
+    .main-content > h1{
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 49px;
+      width: 100%;
+    }
+
+
+    .main-content > p{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .main-content{
+      width: 90%;
+    }
+
+    .main-content > h1{
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      width: 100%;
+    }
+
+
+    .main-content > p{
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+      width: 100%;
+    }
   }
 </style>

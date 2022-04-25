@@ -35,7 +35,6 @@ export default {
 }
 </script>
 
-<style ,
-    ContactsBlockscoped>
+<style scoped>
 
 </style>

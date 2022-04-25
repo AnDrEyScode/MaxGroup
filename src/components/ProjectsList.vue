@@ -1,6 +1,6 @@
 <template>
   <div class="projects-list">
-    <project-item v-for="proj in projects" :key="proj.id"/>
+    <project-item v-for="proj in projects" :key="proj.id" :project="proj"/>
   </div>
 </template>
 
@@ -20,5 +20,11 @@ export default {
 </script>
 
 <style scoped>
-
+  .projects-list{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 </style>

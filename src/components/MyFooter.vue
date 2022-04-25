@@ -58,4 +58,35 @@ export default {
     font-size: 18px;
     line-height: 22px;
   }
+
+  @media screen and (max-width: 600px) {
+    .footer{
+      padding: 10px;
+    }
+
+    .logo{
+      width: 160px;
+      height: auto;
+    }
+
+    .phone{
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .logo{
+      width: 80px;
+      height: auto;
+    }
+
+    .phone{
+      font-weight: 600;
+      font-size: 7px;
+      line-height: 9px;
+    }
+
+  }
 </style>

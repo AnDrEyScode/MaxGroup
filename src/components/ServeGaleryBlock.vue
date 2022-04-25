@@ -56,6 +56,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
   }
   .serve-btns{
     align-self: flex-end;
@@ -83,5 +84,47 @@ export default {
     width: 100%;
     position: relative;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: 800px){
+    .serve-galery > h2{
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-left: 20px;
+      margin-top: 40px;
+      width: auto;
+
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    .serve-btns{
+      margin: 20px;
+      margin-top: 0;
+    }
+
+    .serve-btns > input{
+      width: 30px;
+    }
+
+    .galery-wnd{
+      margin-left: 85px;
+    }
+  }
+
+  @media screen and (max-width: 480px){
+    .serve-galery-container{
+      height: 80vh;
+    }
+
+    .galery-wnd{
+      margin-left: 20px;
+    }
+
+    .serve-galery > h2{
+      margin-top: 20px;
+    }
   }
 </style>

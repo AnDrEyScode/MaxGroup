@@ -36,6 +36,21 @@ h2 {
   line-height: 44px;
 }
 
+@media screen and (max-width: 600px) {
+  h2{
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h2{
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
 
 
 </style>

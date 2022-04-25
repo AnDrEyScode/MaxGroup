@@ -60,4 +60,49 @@ export default {
   .read-more > img{
     width: 8px;
   }
+
+  @media screen and (max-width: 800px) {
+    .about-company-content{
+      left: 20%;
+      width: 60%;
+    }
+
+    .about-company-content > h2{
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    .about-company-content > p{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .read-more > span{
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .about-company-content > h2{
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .about-company-content > p{
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    .read-more > span{
+      font-weight: 600;
+      font-size: 8px;
+      line-height: 10px;
+    }
+  }
 </style>

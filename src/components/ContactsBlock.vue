@@ -16,11 +16,9 @@
 </template>
 
 <script>
-import ContactsBlock from '@/components/ContactsBlock.vue'
 import ContactsForm from './ContactsForm.vue'
 export default {
   components: {
-    ContactsBlock,
     ContactsForm
   }
 }
@@ -74,5 +72,45 @@ export default {
     width: 65%;
     height: 100%;
     border: 1px solid black;
+  }
+
+  @media screen and (max-width: 800px) {
+
+    .contacts-content p{
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .contacts-container{
+      height: 70%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      flex-direction: column;
+    }
+
+    .contacts-content{
+      width: 90%;
+      height: 40%;
+      margin: auto;
+      align-items: center;
+      transform: translateY(50%);
+      border: 1px solid black;
+    }
+
+    .map{
+      width: 100%;
+      height: 70%;
+
+    }
+
+    .contacts-content p{
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+    }
   }
 </style>

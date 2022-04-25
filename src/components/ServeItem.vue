@@ -1,6 +1,6 @@
 <template>
   <div class="serve-item">
-    <img :src="serveItem.path" alt="">
+    <img :src="serveItem.path" alt="serveItem-IMG">
     <div class="serve-item-content">
       
       <h3>{{ serveItem.title }}</h3>
@@ -16,10 +16,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-
-  data(){
-    return { imgSrc: ''}
   },
 
 
