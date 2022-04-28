@@ -3,7 +3,8 @@
     <h2>Свяжитесь с нами!</h2>
     <form class="form" action="">
       <div class="form-inputs">
-        <my-input class="form-input" placeholder="Имя"/> <my-input class="form-input" :inputType="'phone'" placeholder="Телефон"/> 
+        <my-input class="form-input" placeholder="Имя"/> 
+        <my-input class="form-input" :inputType="'phone'" placeholder="Телефон"/> 
         <my-check-box class="check">Я даю согласие на <a style="text-decoration: underline;">обработку персональных данных</a> и соглашаетесь с политикой конфиденциальности</my-check-box>
         <my-button class="form-input white" :value="'Отправить'"/>
       </div>
@@ -53,14 +54,14 @@ export default {
     order: 1;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     /* .form-inputs{
       flex-wrap: nowrap;
     } */
 
-    .form-input{
+    /* .form-input{
       flex: 1 1 200px;
-    }
+    } */
 
     .check{
       order: 0;
@@ -70,6 +71,43 @@ export default {
       align-self: center;
     }
 
+
+  }
+
+  @media screen and (max-width: 600px) {
+    .contacts-form{
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-30%);
+    }
+
+    .form-inputs{
+      width: 80%;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: nowrap;
+      
+      margin: 0 auto;
+      margin-top: 20px;
+      
+      
+    }
+
+    .form-input{
+      margin: 0;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .check{
+      order: 0;
+      margin: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
   }
 </style>

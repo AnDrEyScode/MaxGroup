@@ -84,9 +84,14 @@ export default {
     height: auto;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
+    .preferences{
+      height: 40vh;
+    }
+
     .preference-item{
       width: 170px;
+      height: auto;
       margin: 0;
     }
 

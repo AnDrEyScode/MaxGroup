@@ -94,6 +94,7 @@ export default {
     height: 100%;
     
     max-width: 630px;
+    object-fit: cover;
   }
 
   .project-content{
@@ -142,6 +143,13 @@ export default {
   .count-charecters img{
     height: 20px;
     margin-right: 10px;
+  }
+
+  .count-charecters > div{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
   }
 
   .project-content > *{
@@ -214,6 +222,7 @@ export default {
     align-self: center;
     width: 90%;
     margin-top: 20px;
+    
   }
 
   
@@ -272,8 +281,177 @@ export default {
     text-align: center;
   }
 
+  @media screen and (max-width: 800px) {
+    .project h3{
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      
+    }
+
+    .project-content{
+      padding: 10px;
+    }
+
+    
+
+    .count-charecters > div{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13px;
+    }
+
+    .project-content-short-view{
+      justify-content: center;
+    }
+
+    .project-content-short-view h3{
+      margin: 10px 0;
+    }
+
+    .project-content-short-view .address{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 13px;
+    }
+
+    .project-content-short-view .phases{
+      height: min-content;
+    }
+
+    .project-content-short-view .count-charecters{
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0;
+    }
+
+    .project-content-short-view .time-span{
+      margin-bottom: 5px;
+    }
+
+    .project-content-short-view .showbtn{
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
 
 
+  @media screen and (max-width: 600px){
+    .project{
+      height: max-content;
+      width: 100%;
+      margin: 10px auto;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .project-img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .project-content{
+      transform: translateY(70%);
+    }
+
+    .project-content-short-view{
+      transform: none;
+    }
+
+    .project-content > h3{
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .project-content > p{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    .showbtn{
+      width: 100%;
+    }
+
+    .project-content-full-view{
+      transform: none;
+      height: max-content;
+      
+    }
+
+    .project-content-full-view .phase-list{
+      display: none;
+    }
+
+    .project-content-short-view .project-phases{
+      height: min-content;
+    }
+
+    .project-content-full-view .phases{
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+    }
+
+    .project-content-full-view .project-phases{
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+    }
+
+    .project-content-full-view .count-charecters{
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0;
+    }
+
+    .project-content-full-view .hidebtn{
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    /* .project-content-full-view > p{
+    margin: 10px 0px;
+    color: #2C2450;
+  }
+
+  .project-content-full-view > .phase-list{
+    margin: 20px;
+  }
+
+  .project-content-full-view .count-charecters{
+    margin-right: 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+  }
+
+  .project-content-full-view .count-charecters > div{
+    display: flex;
+    align-items: center;
+  }
+
+  .project-content-full-view > .showbtn{
+    display: none;
+  }
+
+  .project-content-full-view > .hidebtn{
+    display: block;
+    width:50%;
+    text-align: center;
+  } */
+
+  }
 
 
 

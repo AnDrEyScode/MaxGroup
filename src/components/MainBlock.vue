@@ -5,7 +5,7 @@
       <p>
         Компания «Макс Групп» — это собственное производство уличной мебели и малых архитектурных форм (МАФ), помощь в разработке проектов по благоустройству городских и частных территорий. 
       </p>
-      <my-button class="blue" value="Посмотреть работы"/>
+      <my-button class="blue main-btn" value="Посмотреть работы"/>
     </div>
   </div>
 </template>
@@ -52,7 +52,11 @@ export default {
     line-height: 22px;
   }
 
-  @media screen and (max-width: 600px) {
+  .main-btn{
+    width: 300px;
+  }
+
+  @media screen and (max-width: 800px) {
     .main-content{
       width: 70%;
     }
@@ -70,6 +74,10 @@ export default {
       font-size: 16px;
       line-height: 20px;
       width: 100%;
+    }
+
+    .main-btn{
+      width: 230px;
     }
   }
 
@@ -90,6 +98,10 @@ export default {
       font-weight: 400;
       font-size: 10px;
       line-height: 12px;
+      width: 100%;
+    }
+
+    .main-btn{
       width: 100%;
     }
   }

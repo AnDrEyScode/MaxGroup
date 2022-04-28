@@ -1,5 +1,5 @@
 <template>
-  <div class="check-box-container"><input class="check-box" type="checkbox" name="a" id=""><label><slot></slot></label></div>
+  <div class="check-box-container"><input class="check-box" type="checkbox" name="a" id=""><label class="label"><slot></slot></label></div>
   
 </template>
 
@@ -26,5 +26,9 @@ export default {
 
   .check-box:checked{
     background-image: url('@/assets/icons/checked.png');
+  }
+
+  .label{
+    width: 100%;
   }
 </style>

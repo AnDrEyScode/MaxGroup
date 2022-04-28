@@ -1,4 +1,5 @@
 <template>
+  <a name="serves"></a>
   <div class="serve-galery-container">
 
     <div class="serve-btns">
@@ -17,7 +18,6 @@
 
 <script>
 import ServeGalery from '@/components/ServeGalery.vue'
-import axios from 'axios'
 
 
 export default {
@@ -25,19 +25,20 @@ export default {
   data(){
     return {
       serveItems: [],
-      scroll: 0
+      scroll: 0,
+      widthItem: 440
     }
   },
 
   methods: {
     galeryMoveLeft(){
       if (this.scroll < 0)
-        this.scroll += 430
+        this.scroll += this.widthItem
     },
 
     galeryMoveRight(){
       if (document.querySelector('.galery').offsetWidth + this.scroll > document.querySelector('.galery-wnd').offsetWidth)
-        this.scroll -= 430
+        this.scroll -= this.widthItem
     }
   },
 
@@ -46,7 +47,15 @@ export default {
      .then(response => response.json())
      .then(json => this.serveItems = json.serveItems)
      .catch(e => console.log(e))
-  }
+
+
+    if(document.documentElement.clientWidth < 600)
+      this.widthItem = 280
+    else if(document.documentElement.clientWidth < 800)
+      this.widthItem = 480
+
+    
+  },
 }
 </script>
 
@@ -55,12 +64,12 @@ export default {
     height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     position: relative;
   }
   .serve-btns{
     align-self: flex-end;
-    margin: 20px 60px;
+    margin: 20px 50px;
   }
 
   .serve-btns > input:first-child{
@@ -87,6 +96,10 @@ export default {
   }
 
   @media screen and (max-width: 800px){
+    /* .serve-galery{
+      height: 330px;
+    } */
+
     .serve-galery > h2{
       position: absolute;
       left: 0;
@@ -114,9 +127,13 @@ export default {
     }
   }
 
-  @media screen and (max-width: 480px){
+  @media screen and (max-width: 600px){
     .serve-galery-container{
       height: 80vh;
+    }
+
+    .serve-galery{
+      height: 70%;
     }
 
     .galery-wnd{
@@ -124,7 +141,9 @@ export default {
     }
 
     .serve-galery > h2{
-      margin-top: 20px;
+      margin-top: 25px;
     }
+
+    
   }
 </style>

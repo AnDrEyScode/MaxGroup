@@ -24,7 +24,8 @@ export default {
     width: 100%;
     max-width: 1300px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    
     flex-wrap: wrap;
   }
 </style>

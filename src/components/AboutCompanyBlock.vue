@@ -1,4 +1,5 @@
 <template>
+  <a name="about"></a>
   <div class="about-company">
     <div class="about-company-content">
       <h2>О нашей компании</h2>
@@ -87,6 +88,10 @@ export default {
   }
 
   @media screen and (max-width: 480px) {
+    .about-company{
+      height: 100vh;
+    }
+
     .about-company-content > h2{
       font-weight: 600;
       font-size: 20px;

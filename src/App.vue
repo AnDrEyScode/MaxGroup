@@ -6,9 +6,9 @@
 <script>
 import MyHeader from '@/components/MyHeader.vue'
 export default {
-components: {
-  MyHeader
-}
+  components: {
+    MyHeader
+  }
 }
 </script>
 
@@ -34,6 +34,18 @@ h1 {
 h2 {
   font-size: 36px;
   line-height: 44px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text{
+  text-decoration: inherit;
+  color: inherit;
 }
 
 @media screen and (max-width: 600px) {

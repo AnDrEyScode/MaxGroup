@@ -12,11 +12,16 @@
       <div class="nav">
         <nav class="navbar">
           <ul class="menu">
-            <li class="menu-item">Наши проекты</li>
-            <li class="menu-item">Контакты</li>
-            <li class="menu-item">О нас</li>
-            <li class="menu-item">Услуги</li>
+            <li class="menu-item"><a href="#projects">Наши проекты</a></li>
+            <li class="menu-item"><a href="#contacts">Контакты</a></li>
+            <li class="menu-item"><a href="#about">О нас</a></li>
+            <li class="menu-item"><a href="#serves">Услуги</a></li>
           </ul>
+
+          <div class="menu-close" @click="toggleMenu">
+            <div class="left-to-right"></div>
+            <div class="right-to-left"></div>
+          </div>
         </nav>
       </div>
       
@@ -34,7 +39,9 @@ export default {
   methods: {
     toggleMenu(){
       document.querySelector('.navbar').classList.toggle('visible')
-    }
+      // $('.navbar').toggle()
+    },
+
   }
 }
 </script>
@@ -92,6 +99,41 @@ export default {
     margin: auto;
   }
 
+  .menu-close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    height: 30px;
+    width: 30px;
+  }
+
+  .menu-close:hover{
+    cursor: pointer;
+  }
+
+  .left-to-right{
+    width: 28px;
+    border: 1px solid #2C2450;
+    transform: rotate(45deg);
+    background: #2C2450;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+
+  .right-to-left{
+    width: 28px;
+    border: 1px solid #2C2450;
+    transform: rotate(-45deg);
+    background: #2C2450;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+
   .logo:hover{
     cursor: pointer;
   }
@@ -125,10 +167,10 @@ export default {
     }
 
     .menu{
-      padding: 40px 10px;
+      padding: 50px 20px;
       flex-direction: column;
       background: #fff;
-      
+      width: 200px;
     }
 
     .menu-item{
@@ -150,6 +192,10 @@ export default {
       padding: 12.5px 10px;
       background: #fff;
       border-radius: 0px 20px 20px 0px;
+    }
+
+    .menu-close{
+      display: block;
     }
 
     
@@ -184,6 +230,7 @@ export default {
       /* width: 20px; */
       height: 15px;
     }
+
 
 
   }

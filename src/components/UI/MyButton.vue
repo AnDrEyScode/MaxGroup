@@ -1,5 +1,5 @@
 <template>
-  <input class="button" type="button" :value="value"/>
+  <input class="button" type="button" :value="value">
 </template>
 
 <script>
@@ -17,6 +17,10 @@ export default {
 <style scoped>
   .button{
     padding: 20px 50px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .button:hover{
@@ -49,5 +53,15 @@ export default {
     border: 2px solid #fff;
     background: #2C2450;
     color: #fff;
+  }
+
+  @media screen and (max-width: 800px) {
+    .button{
+      padding: 10px 0px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 </style>
