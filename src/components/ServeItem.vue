@@ -36,6 +36,12 @@ export default {
     hideFull(){
       this.$el.querySelector('.serve-item-content').classList.remove('serve-item-content-onhover')
     }
+  },
+
+  watch: {
+    serveItem(newValue){
+      document.querySelector('.serve-IMG').setAttribute('src', newValue.path)
+    }
   }
 
 

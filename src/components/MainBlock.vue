@@ -5,14 +5,18 @@
       <p>
         Компания «Макс Групп» — это собственное производство уличной мебели и малых архитектурных форм (МАФ), помощь в разработке проектов по благоустройству городских и частных территорий. 
       </p>
-      <my-button class="blue main-btn" value="Посмотреть работы"/>
+      <my-button class="blue main-btn" value="Посмотреть работы" @click="moveToProjects"/>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    moveToProjects(){
+      location.href = '#projects'
+    }
+  }
 }
 </script>
 

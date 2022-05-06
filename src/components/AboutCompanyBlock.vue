@@ -6,7 +6,7 @@
       <p>
         Компания «Макс Групп» — это собственное производство уличной мебели и малых архитектурных форм (МАФ), помощь в разработке проектов по благоустройству городских и частных территорий. Мы стараемся предложить наиболее эффективные и выгодные решения. Все проекты на стадии разработки, согласования и реализации выполняются под четким контролем, в нужные сроки и в рамках обозначенного бюджета. Имея собственное производство уличной мебели, мы имеем возможность предоставить конкурентоспособные цены и стать для вас надежным и выгодным партнером. Наши специалисты всегда рады предложить хорошие, свежие и выгодные решения, помочь с выбором.
       </p>
-      <div class="read-more">
+      <div class="read-more" @click="showMore">
         <img :src="require('@/assets/icons/readMore.png')" alt="arrow">
         <span>Читать ещё</span>
       </div>
@@ -16,7 +16,11 @@
 
 <script>
 export default {
-
+  methods: {
+    showMore(){
+      document.querySelector('.about-company-content').classList.toggle('content-full')
+    }
+  }
 }
 </script>
 
@@ -48,10 +52,17 @@ export default {
 
   .about-company-content > p{
     margin-bottom: 30px;
+    height: 110px;
+    overflow: hidden;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+    transition: height 0.7s;
+  }
+
+  .read-more:hover{
+    cursor: pointer;
   }
 
   .read-more > span{
@@ -60,6 +71,15 @@ export default {
 
   .read-more > img{
     width: 8px;
+  }
+
+  .content-full > p{
+    height:20vh;
+    
+  }
+
+  .content-full > .read-more > img{
+    transform: rotateZ(90deg);
   }
 
   @media screen and (max-width: 800px) {

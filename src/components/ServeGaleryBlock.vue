@@ -3,17 +3,17 @@
   <div class="serve-galery-container">
 
     <div class="serve-btns">
-      <input type="image" :src="require('@/assets/icons/arrowLeft.png')" alt="ArrowLeft" @click="galeryMoveLeft">
-      <input type="image" :src="require('@/assets/icons/arrowRight.png')" alt="ArrowRight" @click="galeryMoveRight">
+      <input type="image" :src="require('@/assets/icons/arrowLeft.png')" alt="ArrowLeft" @click="galeryMoveLeft" class="arrowLeft">
+      <input type="image" :src="require('@/assets/icons/arrowRight.png')" alt="ArrowRight" @click="galeryMoveRight" class="arrowRight">
     </div>
 
     <div class="serve-galery">
       <h2>Наши услуги</h2>
-      <div class="galery-wnd"><serve-galery class="galery" :scroll="scroll" :serveItems="serveItems" /></div> 
+      <div class="galery-wnd"><serve-galery class="galery" :widthItem="widthItem" :scroll="scroll" :scrollDirection="scrollDirection" :serveItems="serveItems" /></div>
     </div>
 
   </div>
-  
+
 </template>
 
 <script>
@@ -26,35 +26,66 @@ export default {
     return {
       serveItems: [],
       scroll: 0,
-      widthItem: 440
+      widthItem: 440,
+      currentServeId: 0,
+      scrollDirection: true,
+      isInScroll: false
     }
   },
 
   methods: {
     galeryMoveLeft(){
-      if (this.scroll < 0)
+
+      document.querySelector('.arrowLeft').setAttribute('disabled', true)
+
+      if (this.scroll < -this.widthItem)
         this.scroll += this.widthItem
+      else {
+        this.scrollDirection = true
+        let lastItem = this.serveItems.pop()
+        this.serveItems.unshift(lastItem)
+      }
+
+      setTimeout(() => {
+        document.querySelector('.arrowLeft').removeAttribute('disabled');
+      }, 1000)
+
+      
+
     },
 
     galeryMoveRight(){
-      if (document.querySelector('.galery').offsetWidth + this.scroll > document.querySelector('.galery-wnd').offsetWidth)
+
+      document.querySelector('.arrowRight').setAttribute('disabled', true)
+
+      if (document.querySelector('.galery').offsetWidth + this.scroll > document.querySelector('.galery-wnd').offsetWidth + 2 * this.widthItem)
         this.scroll -= this.widthItem
+      else{
+        this.scrollDirection = false
+        let firstItem = this.serveItems.shift()
+        this.serveItems.push(firstItem)
+      }
+
+      setTimeout(() => {
+        document.querySelector('.arrowRight').removeAttribute('disabled');
+      }, 1000)
+
     }
   },
 
   mounted(){
-     fetch('data/serveItems.json')
+    fetch('data/serveItems.json')
      .then(response => response.json())
      .then(json => this.serveItems = json.serveItems)
      .catch(e => console.log(e))
-
 
     if(document.documentElement.clientWidth < 600)
       this.widthItem = 280
     else if(document.documentElement.clientWidth < 800)
       this.widthItem = 480
 
-    
+    this.currentServeId = this.serveItems.length + 1
+    this.scroll = -this.widthItem
   },
 }
 </script>
@@ -122,6 +153,10 @@ export default {
       width: 30px;
     }
 
+    .serve-btns > input[type="button"]:disabled{
+      cursor: pointer;
+    }
+
     .galery-wnd{
       margin-left: 85px;
     }
@@ -144,6 +179,6 @@ export default {
       margin-top: 25px;
     }
 
-    
+
   }
 </style>
