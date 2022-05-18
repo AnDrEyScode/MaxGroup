@@ -30,6 +30,7 @@ export default {
     background-color: #2C2450;
     width: 100%;
     padding: 15px 75px;
+    position: relative;
   }
 
   .footer-container{
@@ -62,6 +63,8 @@ export default {
   @media screen and (max-width: 600px) {
     .footer{
       padding: 10px;
+      /* transform: translateY(-120px); */
+      position: relative;
     }
 
     .logo{

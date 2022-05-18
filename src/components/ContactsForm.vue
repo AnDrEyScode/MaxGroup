@@ -2,14 +2,35 @@
   <div class="contacts-form">
     <h2>Свяжитесь с нами!</h2>
     <form class="form" action="">
+
       <div class="form-inputs">
-        <my-input class="form-input" placeholder="Имя"/> 
-        <my-input class="form-input" :inputType="'phone'" placeholder="Телефон"/> 
-        <my-check-box class="check">Я даю согласие на <a style="text-decoration: underline;">обработку персональных данных</a> и соглашаетесь с политикой конфиденциальности</my-check-box>
-        <my-button class="form-input white" :value="'Отправить'"/>
+
+        <my-input
+          id="form-name"
+          class="form-input"
+          placeholder="Имя"
+          errorPlaceholder="Данные введены неверно"
+          v-model.trim="name"
+          :isValid="isNameValid"
+          @change="validateName" /> 
+
+        <my-input
+          id="form-phone"
+          class="form-input"
+          inputType="phone"
+          placeholder="Телефон"
+          errorPlaceholder="Данные введены неверно"
+          v-model="phone"
+          :isValid="isPhoneValid"
+          @change="validatePhone"/> 
+
+        <my-check-box class="check" v-model="politicsChecked">
+          Я даю согласие на <a style="text-decoration: underline;">обработку персональных данных</a> и соглашаетесь с политикой конфиденциальности
+        </my-check-box>
+
+        <my-button class="form-input white" :value="'Отправить'" @click.prevent="trySend"/>
+
       </div>
-      
-      <!-- <input type="checkbox" value="Я даю согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности"> -->
       
     </form>
   </div>
@@ -17,7 +38,44 @@
 
 <script>
 export default {
+  data(){
+    return {
+      name: '',
+      phone: '',
+      politicsChecked: false,
+      isNameValid: true,
+      isPhoneValid: true
+    }
+  },
 
+  methods: {
+    validateForm(){
+      this.validatePhone()
+      this.validateName()
+      return Boolean(this.politicsChecked && this.isNameValid && this.isPhoneValid)
+    },
+
+    validatePhone() {
+      let mask = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/
+      this.isPhoneValid = mask.test(this.phone)
+    },
+
+    validateName() {
+      const mask = /^[А-ЯЁ][а-яё]*([-][А-ЯЁ][а-яё]*)?\s[А-ЯЁ][а-яё]*\s[А-ЯЁ][а-яё]*$/
+      this.isNameValid = mask.test(this.name)
+    },
+
+    trySend(){
+      if(!this.validateForm())
+        return
+      
+      console.log('Sent')
+      this.name = ''
+      this.phone = ''
+    }
+  }
+
+  
 }
 </script>
 
@@ -26,7 +84,6 @@ export default {
     background: #2C2450;
     padding: 60px 110px;
     margin: 0px 75px;
-    transform: translateY(-40%);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -52,19 +109,21 @@ export default {
     width: 600px;
     margin-top: 20px;
     order: 1;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
   }
 
-  @media screen and (max-width: 800px) {
-    /* .form-inputs{
-      flex-wrap: nowrap;
-    } */
+  
 
-    /* .form-input{
-      flex: 1 1 200px;
-    } */
+  @media screen and (max-width: 800px) {
 
     .check{
       order: 0;
+      font-weight: 300;
+      font-size: 9px;
+      line-height: 11px;
     }
 
     .contacts-form > h2{
@@ -81,7 +140,6 @@ export default {
       padding: 20px;
       align-items: center;
       justify-content: center;
-      transform: translateY(-30%);
     }
 
     .form-inputs{
@@ -92,8 +150,6 @@ export default {
       
       margin: 0 auto;
       margin-top: 20px;
-      
-      
     }
 
     .form-input{

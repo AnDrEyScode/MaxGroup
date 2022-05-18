@@ -1,6 +1,6 @@
 <template>
   <div class="checkbox">
-    <input type="checkbox" id="cb1"> <label for="cb1"><slot></slot></label>
+    <input :checked="modelValue" @click="updateValue" type="checkbox" id="cb1"> <label for="cb1"><slot></slot></label>
   </div>
   
 </template>
@@ -8,13 +8,24 @@
 <script>
 export default {
   name: "my-check-box",
+
+  props: {
+    modelValue: {
+      type: Boolean
+    }
+  },
+
+  methods: {
+    updateValue(event){
+      this.$emit('update:modelValue', event.target.checked)
+    }
+  }
 }
 </script>
 
 <style scoped>
-  .checkbox{
-    color: #fff;
-  }
+
+  
 
   .checkbox > input[type="checkbox"]:checked, 
   .checkbox > input[type="checkbox"]:not(:checked)
@@ -74,6 +85,23 @@ export default {
 
   input[type="checkbox"]:checked + label:after{
     opacity: 1;
+  }
+
+  .checkbox label{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFFFFF;
+  }
+
+  @media screen and (max-width: 600px) {
+    .checkbox label{
+      font-style: normal;
+      font-weight: 300;
+      font-size: 9px;
+      line-height: 11px;
+    }
   }
 
 </style>

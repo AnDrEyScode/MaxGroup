@@ -109,7 +109,7 @@ export default {
 
   @media screen and (max-width: 480px) {
     .about-company{
-      height: 100vh;
+      height: 80vh;
     }
 
     .about-company-content > h2{

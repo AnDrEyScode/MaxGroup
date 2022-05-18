@@ -1,7 +1,7 @@
 <template>
   <a name="contacts"></a>
   <div class="contacts" >
-    <contacts-form/>
+    <contacts-form class="contacts-form"/>
     <div class="contacts-container">
       <div class="contacts-content">
         <h2>Наши контакты</h2>
@@ -30,6 +30,11 @@ export default {
     height: 80vh;
     width:100%;
     position: relative;
+  }
+
+  .contacts-form{
+    /* transform: translateY(-40%); */
+    top: -40%;
   }
 
   .contacts-container{
@@ -73,6 +78,7 @@ export default {
     width: 65%;
     height: 100%;
     border: 1px solid black;
+    min-height: 300px;
   }
 
   @media screen and (max-width: 800px) {
@@ -88,15 +94,21 @@ export default {
 
   @media screen and (max-width: 600px) {
     .contacts{
-      height: 100vh;
+      height: auto;
+      position: relative;
+      margin-top: -60px;
+    }
+
+    .contacts-form{
+      position: relative;
+      margin-top: 60px;
     }
 
     .contacts-container{
-      height: 70%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      height: 20%;
+      position: relative;
       flex-direction: column;
+      justify-content: center;
     }
 
     .contacts-content{
@@ -104,15 +116,17 @@ export default {
       height: max-content;
       margin: auto;
       align-items: center;
-      transform: translateY(24%);
       border: 1px solid black;
       padding: 30px;
     }
 
     .map{
+      position: relative;
       width: 100%;
-      height: 70%;
+      z-index: -1;
       border: none;
+      border: 1px solid black;
+      margin-top: -60px;
     }
 
     .contacts-content p{
