@@ -74,7 +74,7 @@ export default {
   }
 
   .content-full > p{
-    height:20vh;
+    height:30vh;
     
   }
 

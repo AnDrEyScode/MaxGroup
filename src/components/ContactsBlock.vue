@@ -10,7 +10,8 @@
         <p class="contacts-phone"><img src="@/assets/icons/phone.png" alt="phone"> 8 (495) 285 12-21</p>
       </div>
       <div class="map">
-        <iframe src="" frameborder="0"></iframe>
+        <!-- <iframe src="" frameborder="0"></iframe> -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2247.813056815686!2d37.351625416334485!3d55.70962118054186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54fb4d51ed1a3%3A0x8bce54b0378ac77c!2z0KDRg9Cx0LvQtdCy0YHQutC40Lkg0L_RgC4sIDYsINCd0LXQvNGH0LjQvdC-0LLQutCwLCDQnNC-0YHQutC-0LLRgdC60LDRjyDQvtCx0LsuLCAxNDMwMjY!5e0!3m2!1sru!2sru!4v1659131713763!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
@@ -34,7 +35,7 @@ export default {
 
   .contacts-form{
     /* transform: translateY(-40%); */
-    top: -40%;
+    top: -20%;
   }
 
   .contacts-container{
@@ -79,6 +80,11 @@ export default {
     height: 100%;
     border: 1px solid black;
     min-height: 300px;
+  }
+
+  .map iframe{
+    width: 100%;
+    height: 100%;
   }
 
   @media screen and (max-width: 800px) {

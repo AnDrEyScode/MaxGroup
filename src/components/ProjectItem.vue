@@ -18,7 +18,7 @@
 
         <div class="count-charecters">
           <div class="time-span"><img :src="require('@/assets/icons/time.png')" alt="clock"> {{ project.timespan }}</div>
-          <div class="cost"><img :src="require('@/assets/icons/price.png')" alt="$"> {{ project.price }} ₽</div>
+          <div class="cost"><img :src="require('@/assets/icons/price.png')" alt="$"> {{ project.price }}&nbsp;₽</div>
         </div>
 
       </div>
@@ -122,6 +122,7 @@ export default {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
+    color:#2C2450;
   }
 
 
@@ -139,6 +140,8 @@ export default {
     list-style-position: inside;
     margin: 20px 0px;
   }
+
+  
 
   .count-charecters img{
     height: 20px;
@@ -191,6 +194,7 @@ export default {
   .project-content-short-view > .address{
     display: block;
     order: -1;
+    color: #FFFFFF;
   }
 
   .project-content-short-view > .project-phases{
@@ -255,10 +259,12 @@ export default {
 
   .project-content-full-view > .phase-list{
     margin: 20px;
+    margin-right: 40px;
   }
 
   .project-content-full-view .count-charecters{
-    margin-right: 70px;
+    /* margin-right: 70px; */
+    min-width: 30%;
     height: 100%;
     display: flex;
     flex-direction: column;
