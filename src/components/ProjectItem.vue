@@ -84,7 +84,9 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
+    /* width: 630px; */
     /* max-width: 630px; */
+    min-width: 630px;
     margin: 10px 5px;
   }
 
@@ -288,6 +290,10 @@ export default {
   }
 
   @media screen and (max-width: 800px) {
+    .project{
+      min-width: 0;
+    }
+
     .project h3{
       font-style: normal;
       font-weight: 600;
@@ -352,6 +358,7 @@ export default {
       margin: 10px auto;
       padding: 0;
       flex-wrap: wrap;
+      min-width: 0;
     }
 
     .project-img{

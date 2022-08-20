@@ -1,9 +1,9 @@
 <template>
   <div class="main">
     <div class="main-content">
-      <h1>Заголовок на одну строку</h1>
+      <h1>Проектирование и строительство зданий и сооружений</h1>
       <p>
-        Компания «Макс Групп» — это собственное производство уличной мебели и малых архитектурных форм (МАФ), помощь в разработке проектов по благоустройству городских и частных территорий. 
+        Компания «Макс Групп» – компания, предоставляющая полный цикл услуг по проектированию и строительству промышленных, жилых и общественных зданий от формирования технико-экономических показателей до сдачи объекта в эксплуатацию.
       </p>
       <my-button class="blue main-btn" value="Посмотреть работы" @click="moveToProjects"/>
     </div>
@@ -33,7 +33,7 @@ export default {
   .main-content{
     position: relative;
     width: 1000px;
-    height: 30%;
+    /* height: 40%; */
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -45,6 +45,7 @@ export default {
   .main-content > h1{
     text-align: center;
     font-style: normal;
+    margin-bottom: 40px;
   }
 
   .main-content > p{
@@ -54,6 +55,7 @@ export default {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+    margin-bottom: 50px;
   }
 
   .main-btn{
