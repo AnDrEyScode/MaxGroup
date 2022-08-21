@@ -1,5 +1,5 @@
 <template>
-  <input class="button" type="button" :value="value">
+  <input class="button" :type="type" :value="value">
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
     value: {
       type: String,
       required: true
+    },
+    type: {
+      type: String,
+      default: 'button'
     }
   }
 }

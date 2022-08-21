@@ -1,6 +1,6 @@
 <template>
   <div class="my-input-container">
-    <input class="my-input" :class="{'my-input-error': !isValid}" :type="inputType" :value="modelValue" @input="updateValue" :placeholder="placeholder">
+    <input class="my-input" :class="{'my-input-error': !isValid}" :name="input_name" :type="inputType" :value="modelValue" @input="updateValue" :placeholder="placeholder">
     <label >{{ errorPlaceholder }}</label>
   </div>
   
@@ -31,6 +31,11 @@ export default {
     },
 
     placeholder: {
+      type: String,
+      default: ''
+    },
+
+    input_name: {
       type: String,
       default: ''
     }

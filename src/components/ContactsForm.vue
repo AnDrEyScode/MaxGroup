@@ -1,12 +1,14 @@
 <template>
   <div class="contacts-form">
+    
     <h2>Свяжитесь с нами!</h2>
-    <form class="form" action="">
+    <form class="form" >
 
       <div class="form-inputs">
 
         <my-input
           id="form-name"
+          :input_name="'name'"
           class="form-input"
           placeholder="Имя"
           errorPlaceholder="Данные введены неверно"
@@ -16,6 +18,7 @@
 
         <my-input
           id="form-phone"
+          :input_name="'phone'"
           class="form-input"
           inputType="phone"
           placeholder="Телефон"
@@ -37,6 +40,7 @@
 </template>
 
 <script>
+import Email from '@/libs/smtp.js'
 export default {
   data(){
     return {
@@ -46,6 +50,12 @@ export default {
       isNameValid: true,
       isPhoneValid: true
     }
+  },
+
+  mounted() {
+      let libScript = document.createElement('script')
+      libScript.setAttribute('src', require('@/libs/smtp.js'))
+      document.head.appendChild(libScript)
   },
 
   methods: {
@@ -66,8 +76,21 @@ export default {
     },
 
     trySend(){
-      if(!this.validateForm())
-        return
+      //if(!this.validateForm())
+      //  return
+      alert()
+
+      Email.send({
+        Host : "smtp.mail.ru",
+        Username : "mgmos-from",
+        Password : "1ttOaIyrYP2-",
+        To : 'mgmos-from@mail.ru',
+        From : "mgmos-from@mail.ru",
+        Subject : `${this.name} ${Date.now().toString()}`,
+        Body : `${this.name} оставил заявку, его телефон: ${this.phone}`
+      })
+      .then(message => alert(message))
+      .catch(Err => console.log(Err.name))
       
       console.log('Sent')
       this.name = ''

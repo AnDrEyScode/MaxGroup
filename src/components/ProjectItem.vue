@@ -4,7 +4,7 @@
     <div class="project-content">
       <h3>{{ project.title }}</h3>
       <p class="address">{{ project.address }}</p>
-      <p>{{ project.body }}</p>
+      <!-- <p>{{ project.body }}</p> -->
 
       
       <div class="project-phases">
@@ -18,7 +18,7 @@
 
         <div class="count-charecters">
           <div class="time-span"><img :src="require('@/assets/icons/time.png')" alt="clock"> {{ project.timespan }}</div>
-          <div class="cost"><img :src="require('@/assets/icons/price.png')" alt="$"> {{ project.price }}&nbsp;₽</div>
+          <!-- <div class="cost"><img :src="require('@/assets/icons/price.png')" alt="$"> {{ project.price }}&nbsp;₽</div> -->
         </div>
 
       </div>
